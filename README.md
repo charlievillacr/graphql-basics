@@ -17,7 +17,9 @@ GraphQL es un nuevo paradigma aplicado para el intercambio de información entre
 - npm i graphql
 
 ## Schema y types
+
 [Clase 3](https://platzi.com/clases/1512-graphql/19901-schema-y-types/)
+
 El Schema es la base de una API en GraphQL, es el encargado de describir todos los tipos de información que va a contener.
 
 Para la creación de este proyecto usaremos una herramienta llamada npx, para ello primero debes instalarlo con el comando:
@@ -62,4 +64,37 @@ graphql(schema, '{ hello }', resolvers).then((data) => {
 <!-- Clase 5 -->
 [Clase 5](https://platzi.com/clases/1512-graphql/19903-sirviendo-el-api-en-la-web/)
 
-- Instalar Express y Express GraphQL
+- Instalar Express Server y MiddleWare Express GraphQL
+
+- Convertirlo en un aplicativo web
+
+- Ir a la terminal
+
+- npm i express express-graphql
+
+<!-- Después de esto vamos a definir el API -->
+
+- Agregar a consts, luego de 'use strict'
+
+const express = require('express')
+const gqMiddleware = require('express-graphql')
+
+const app = express()
+const port = process.eventNames.port || 3000
+
+- app.use()
+
+app.use('/api', gqMiddleware({
+    schema: schema,
+    rootValue: resolvers,
+    graphiql: true
+}))
+
+- app.listen()
+
+- app.listen(port, () => {
+   console.log(`Server is listening at http://localhost:${port}/api`);
+})
+
+- Mi app está escuchando en: http://localhost:3000/api
+
