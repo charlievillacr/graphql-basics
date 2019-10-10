@@ -4,6 +4,7 @@
   "description": "mkdir platzi-dir",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon -e js,graphql index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,5 +14,8 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^14.5.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
   }
 }
